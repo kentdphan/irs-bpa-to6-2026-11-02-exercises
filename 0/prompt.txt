@@ -1,0 +1,55 @@
+`The page of case CS-2026-0001 shows Balance due $18,400. It must show $12,250, which is Assessed minus Paid. Find the cause and fix it. Do not change the data.`
+
+---
+
+install flask for me
+
+---
+
+flask --app app run
+bash: flask: command not found
+
+---
+
+flask --app app run
+Usage: flask run [OPTIONS]
+Try 'flask run --help' for help.
+
+---
+
+Usage: python -m flask run [OPTIONS]
+Try 'python -m flask run --help' for help.
+
+Error: Could not import 'app'.
+
+---
+
+my jupyer extension is acting up and stuck connecting to the kerne l for hours. please fix
+
+---
+
+vs code
+
+---
+
+Run pytest in this folder after every change. Finish only when all tests pass.
+To run the app: flask --app app run. It keeps running until Ctrl+C, so check a change with the tests, not the app.
+
+---
+
+On the case list page, add a Balance due column after status
+
+---
+
+Do these tasks for me:
+- AGENTS.md does not name pytest. Add the tests line in cell 2, as step 2 says.
+- AGENTS.md does not name flask --app app run. Add the app line in cell 2, as step 2 says.
+- Codex has not changed a file of the app yet. Ask for the change in step 3.
+
+---
+
+my jupyer extension is acting up and stuck connecting to the kerne l for hours. please fix. summarize what you did
+
+---
+
+`$planning-with-files Plan and make this change: on the case list page, show the words Review first next to each case whose selection score is 50 or more.`

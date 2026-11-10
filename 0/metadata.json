@@ -1,0 +1,58 @@
+{
+  "cli_version": "0.13.1",
+  "checkpoint_id": "01M7306YK3J4BJW03PGY5V8SVA",
+  "session_id": "01a1c0df-2730-7732-8e57-52c1390c2eda",
+  "strategy": "manual-commit",
+  "created_at": "2026-11-10T15:11:31.012163552Z",
+  "branch": "main",
+  "checkpoints_count": 11,
+  "save_step_count": 11,
+  "files_touched": [
+    "week-02/day-01/exercise-01-fix-a-wrong-value/exercise.ipynb",
+    "week-02/day-01/exercise-01-fix-a-wrong-value/reference-app/templates/case.html",
+    "week-02/day-01/exercise-01-fix-a-wrong-value/reference-app/templates/list.html",
+    "week-02/day-01/exercise-02-write-agents-md/exercise.ipynb",
+    "week-02/day-01/exercise-02-write-agents-md/reference-app/AGENTS.md",
+    "week-02/day-01/exercise-02-write-agents-md/reference-app/templates/list.html",
+    "week-02/day-01/exercise-03-use-a-skill/exercise.ipynb",
+    "week-02/day-01/exercise-03-use-a-skill/reference-app/findings.md",
+    "week-02/day-01/exercise-03-use-a-skill/reference-app/progress.md",
+    "week-02/day-01/exercise-03-use-a-skill/reference-app/task_plan.md",
+    "week-02/day-01/exercise-03-use-a-skill/reference-app/templates/list.html"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "2e52c76c7cc4",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 85862,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2392960,
+    "output_tokens": 10477,
+    "api_call_count": 52,
+    "subagent_tokens_complete": true
+  },
+  "redaction": {
+    "replacements": 0,
+    "layers": {
+      "betterleaks": 0,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 0,
+      "credentialed_uri": 0,
+      "entropy": 0,
+      "key_context": 0,
+      "pii": 0,
+      "provider_token": 0,
+      "shell_stdin": 0
+    },
+    "pii": {
+      "EMAIL": 0,
+      "IP": 0,
+      "PHONE": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 11
+  }
+}
