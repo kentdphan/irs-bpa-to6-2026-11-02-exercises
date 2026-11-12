@@ -1,0 +1,8 @@
+Troubleshoot
+An exception has occurred, use %tb to see the full traceback.
+
+SystemExit: pydeps did not run: /home/user/irs-bpa-to6-2026-11-02-exercises/.venv/bin/python: No module named pydeps
+
+---
+
+Assist in Step 6
