@@ -5,5 +5,5 @@
  ],
  "non_wage_income_stops_at": "return_header. The graph shows no table to its left: no other table feeds it.",
  "predict": "No, or not for sure. The band comes from a Python function, which can hide the link to total_income.",
- "income_band_trace": "Recorded at the run-through: the graph highlights return_header.total_income, or nothing; either way it is noted beside the column."
+ "income_band_trace": "The graph highlights return_header.total_income: lineage saw through this Python function, so my no did not hold."
 }

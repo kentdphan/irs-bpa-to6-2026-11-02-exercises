@@ -57,11 +57,11 @@ ORDER BY full_name, column_name
 
 Why: "Comments are powered by a large language model (LLM) that takes into account object metadata, such as the table schema and column names" (Databricks documentation). It reads the names, not the values. "AI models are not always accurate and comments must be reviewed prior to saving" (Databricks documentation).
 
-1. In Catalog Explorer, open the catalog `course`, the schema `returns`, then the table `return_header`. Select the **Columns** tab.
-2. Above the column headings, select **AI generate**. A draft comment appears beside each column.
+1. In Catalog Explorer, open the catalog `course`, the schema `returns`, then the table `return_header`. On its **Overview** tab, find the **Columns** list.
+2. Above the column headings, at the right, select **AI generate**. The window **Edit column comments** opens. It drafts a comment for each column that has none, such as `total_income`. A column that has a comment shows its own comment, not a draft.
 3. In cell 3's first entry, write your first column between the quotes of `"column": ""`.
 4. Copy its draft, word for word, between the quotes of `"draft": ""`.
-5. Do not select the check mark beside the draft: the check mark saves the draft as the column's comment, for everyone in the class. To close the drafts, reload the browser tab.
+5. Do not select **Save all**, or the check mark beside a draft: either one saves the draft as the column's comment, for everyone in the class. To close the window, select the **X** at its top right, then **Discard Changes**.
 6. Do the same for your second column, in the second entry.
 
 Use the column's draft from `drafts.md` in these cases:

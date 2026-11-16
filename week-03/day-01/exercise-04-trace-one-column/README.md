@@ -25,8 +25,8 @@
 Why: `non_wage_income` came from one SQL query on Databricks, so lineage recorded the columns it reads.
 
 1. In Catalog Explorer, open the catalog `course`, the schema `returns`, then the table `return_summary`.
-2. Select the **Lineage** tab, then **See Lineage Graph**. The graph shows `return_summary` and the table it came from.
-3. Click the `return_summary` box. Its columns show. Click the `return_header` box too, to show its columns.
+2. Select the **Lineage** tab, then **See lineage graph**. The graph shows `return_summary` and the table it came from.
+3. Each box lists its table's columns: `return_summary` on the right, `return_header` on the left.
 4. In the `return_summary` box, select the column `non_wage_income`. The graph highlights the columns it came from.
 5. In cell 1, write each highlighted column in `non_wage_income_sources`, as table and column with a dot between, such as `"return_header.total_income"`. With or without `course.returns.` in front: the check accepts both.
 6. If the graph highlights `return_id` too, leave it out. If it highlights any other column, write what you see. Then tell the trainer.
@@ -52,7 +52,7 @@ First, predict. Read **What you have** again: how the setup notebook made `incom
 
 Then look:
 
-1. In the same graph, select the column `income_band`.
+1. In the same graph, select **Show all columns** in the `return_summary` box: after step 1 it shows only `non_wage_income`. Then select the column `income_band`.
 2. Look at what the graph highlights: a column of `return_header`, or nothing.
 3. In `income_band_trace`, write what the graph shows. If it shows anything else, or no lineage yet, write exactly what you see.
 4. In the same line, write whether it matches your prediction.

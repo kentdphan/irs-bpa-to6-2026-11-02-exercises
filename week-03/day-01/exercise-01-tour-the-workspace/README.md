@@ -50,7 +50,7 @@ else:
 
 Why: a notebook runs code on a table, on compute (a cluster). "A notebook runs on a cluster, so a notebook with none attached runs nothing." (the day's reading)
 
-1. At the top right of the notebook, open the compute menu (**Connect**). Select the compute whose name the trainer wrote on the board. If it shows that it is starting, wait: it can take a few minutes.
+1. At the top right of the notebook, open the compute menu: it shows **Connect**, or the name of the compute already attached, such as **Serverless**. Select the compute whose name the trainer wrote on the board. If it shows that it is starting, wait: it can take a few minutes.
 2. Run cell 1. You should see the three parts of the name, one on each line: the catalog, the schema, the table.
 3. Run cell 2. It counts the rows of the table that you named in cell 1. You should see one line: `Rows in`, the full name, and a number.
 
@@ -75,7 +75,7 @@ First, predict. The notebook ran on the compute you attached. The SQL editor run
 Then count:
 
 1. Open the SQL editor in a new browser tab: in the left bar, right-click **SQL Editor**, then open the link in a new tab. The notebook keeps its values in its own tab.
-2. At the top of the editor, select the SQL warehouse whose name the trainer wrote on the board. If its status is Stopped, it starts when you run the query. Wait: it can take a few minutes.
+2. At the top right of the editor, select the round compute icon, then the SQL warehouse whose name the trainer wrote on the board. If its status is Stopped, it starts when you run the query. Wait: it can take a few minutes. If a note about the new SQL editor opens, select **Got it**.
 3. Type this query. Put the table's full name from cell 1 in place of `<full name>`.
 
    SQL editor:
@@ -84,7 +84,7 @@ Then count:
    SELECT COUNT(*) FROM <full name>
    ```
 
-4. Select **Run**. You should see one row with one number.
+4. Select **Run all**. You should see one row with one number.
 5. Go back to the notebook's tab. In cell 3, type that number after `sql_editor_count = `, in place of `None`. Type the digits only, with no quotes.
 6. Run cell 3. It prints the two counts side by side.
 

@@ -8,7 +8,7 @@ One `CREATE TABLE ... AS SELECT` query on `course.returns.return_header` (`week-
 
 - `non_wage_income` = `total_income - wages_amt`: two source columns, which Unity Catalog records.
 - `adjustments_amt` = `total_income - agi_amt`: the demo's column, the same shape.
-- `income_band` = `income_band(total_income)`, a Python function the setup notebook registers in cell 3 before the query. Databricks' lineage page: "Use of user-defined functions (UDFs) can obscure the mapping between source and target columns." Whether the graph shows `total_income` for it is not known until the run-through.
+- `income_band` = `income_band(total_income)`, a Python function the setup notebook registers in cell 3 before the query. Databricks' lineage page: "Use of user-defined functions (UDFs) can obscure the mapping between source and target columns." In the class workspace, lineage recorded it anyway: on 2026-11-13, Unity Catalog's column lineage of `return_summary.income_band` gave `return_header.total_income` as its source (read through the lineage API, in a stand-in schema). The graph draws from the same record.
 - `return_header` was filled by `INSERT ... VALUES` with values the notebook wrote, so no table feeds it.
 
 ## 1. The trace of `non_wage_income`
@@ -20,14 +20,15 @@ One `CREATE TABLE ... AS SELECT` query on `course.returns.return_header` (`week-
 
 ## 2. The prediction, and the trace of `income_band`
 
-- **The answer.** Prediction: no, or not for sure, since a Python function can hide the link. The trace: what the graph shows, recorded beside the prediction.
+- **The answer.** Prediction: no, or not for sure, since a Python function can hide the link. The trace: the graph highlights `return_header.total_income`, so the prediction did not hold. A function can hide the link; here lineage saw through it, and the talk after the exercise asks why that is not a promise.
 - **The notebook line.** "Use of user-defined functions (UDFs) can obscure the mapping between source and target columns." The step says the rest in its own words: an empty trace does not prove a column has no source.
 - **What else the check accepts.** A `predict` of 5 words or more and an `income_band_trace` of 4 words or more, either way: the talk after the exercise compares them. The check cannot know what the graph shows, so it does not judge it.
 
 ## Where it ran
 
 - On the author's computer, 2026-11-13, without Databricks: the notebook's cells in order, with a stand-in for `spark` on DuckDB (the Python function registered as a DuckDB function); the optional cell 4 read a stand-in `column_lineage` table holding the two rows the query should return. The start printed `Not yet: 4 left.`. The answer printed `Done: non_wage_income traces to return_header.total_income and return_header.wages_amt, and stops at return_header; your income_band trace is recorded beside your prediction.` `commands.sh` printed the same on Python 3.10 and 3.14.
-- Trainer gaps, at the run-through: (1) the lineage graph highlights exactly `total_income` and `wages_amt` for `non_wage_income`; (2) what it shows for `income_band`, written into this file and the answer notebook; (3) the optional cell 4 needs `SELECT` on `system.access.column_lineage`, which an account or metastore admin grants.
+- In the class workspace, 2026-11-13, on serverless compute, with the tables made by the setup notebook in a stand-in schema (the catalog `course` did not exist yet): the start printed `Not yet: 4 left.` and the answer `Done:`. The lineage API gave `wages_amt` and `total_income` for `non_wage_income`, `agi_amt` and `total_income` for `adjustments_amt`, and `total_income` for `income_band`. Cell 4 stopped with `INSUFFICIENT_PERMISSIONS` (no `USE SCHEMA` on `system.access`) for the course's test learner, as the step says.
+- Trainer gaps, at the run-through: (1) the lineage graph highlights the same columns as the lineage API; (2) the optional cell 4 needs `SELECT` on `system.access.column_lineage`, which an account or metastore admin grants.
 
 ## Where each quote comes from
 
